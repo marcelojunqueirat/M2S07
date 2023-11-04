@@ -11,8 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "VEICULOS")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Veiculo {
     @Id
     private String placa;
@@ -23,4 +23,12 @@ public class Veiculo {
     private String cor;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "veiculo")
     private List<Multa> multas;
+
+    public Veiculo(String placa, TipoVeiculo tipoVeiculo, String nome, Integer anoFabricacao, String cor) {
+        this.placa = placa;
+        this.tipoVeiculo = tipoVeiculo;
+        this.nome = nome;
+        this.anoFabricacao = anoFabricacao;
+        this.cor = cor;
+    }
 }
