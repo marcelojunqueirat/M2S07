@@ -21,10 +21,22 @@ public class Multa {
     @JoinColumn(name = "PLACA", referencedColumnName = "PLACA")
     private Veiculo veiculo;
 
+
     public Multa(String local, String motivo, Float valor, Veiculo veiculo) {
         this.local = local;
         this.motivo = motivo;
         this.valor = valor;
         this.veiculo = veiculo;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Multa{" +
+                "id=" + id +
+                ", local='" + local + '\'' +
+                ", motivo='" + motivo + '\'' +
+                ", valor=" + valor +
+                '}';
     }
 }
